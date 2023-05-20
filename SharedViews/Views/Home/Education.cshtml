@@ -1,0 +1,52 @@
+﻿@*@model SharedViews.Models.EducationModel*@
+@* Above line is only  for single object, not for a collection*@
+@* Use this line in case of a Strongly-Types View with single object*@
+@* Strongly-Types View do'nt really need Dynamic Data packages such as ViewData, ViewBag *@
+@* These Dynamic Data packages do'nt show any compile time error, and hence can cause problems during runtime. *@
+
+@* For a collection of Objects with Strongly-Types View such as List, use following Line *@
+@model List<SharedViews.Models.EducationModel>
+
+
+@{
+    ViewBag.Title = "Education";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h2 {
+        color: #009272;
+    }
+</style>
+<div class="container">
+    <h1 style="font-weight: 600">Education</h1>
+
+    @foreach (var item in ViewBag.EducationList)
+    {
+        <br />
+        <h2>@item.Course &nbsp; (@item.CourseFull)</h2>
+        <h3>@item.Branch</h3>
+        <h3>@item.College</h3>
+        <h3>@item.Year</h3>
+        <h3>@item.City</h3>
+    }
+
+    <h1>@*Strongly Typed with One Object*@</h1>
+
+    @*<h4>@Model.Course</h4>*@
+    @* Strongly typed view statement *@
+
+    <hr style="border: 1px solid #808080" />
+    <br />
+    <h1 style="font-weight: 600">Strongly Typed with Collection of Objects</h1>
+
+    @foreach (var item in Model)
+    {
+        <br />
+        <h2>@item.Course &nbsp; (@item.CourseFull)</h2>
+        <h3>@item.Branch</h3>
+        <h3>@item.College</h3>
+        <h3>@item.Year</h3>
+        <h3>@item.City</h3>
+    }
+</div>

@@ -55,7 +55,8 @@ namespace BusinessLayer
                     {
                         // convert each row into an employee object
                         Employee employee = new Employee();
-                        employee.ID = Convert.ToInt32(rdr["EmployeeID"]); // Id is the column in database
+                        // Model Class Properties = Database Column Names
+                        employee.ID = Convert.ToInt32(rdr["EmployeeID"]); // EmployeeID is the column in database
                         employee.Name= rdr["_name"].ToString();
                         employee.Gender = rdr["Gender"].ToString();
                         employee.City = rdr["City"].ToString();

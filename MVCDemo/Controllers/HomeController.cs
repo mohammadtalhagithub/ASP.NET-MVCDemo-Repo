@@ -55,5 +55,10 @@ namespace MVCDemo.Controllers
 
             return View();
         }
+
+        public string UrlAction()
+        {
+            return "<h1>" + "This is returned by @Url.Action Html Helper Method.";
+        }
     }
 }

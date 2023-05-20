@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCDemo", "MVCDemo\MVCDemo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{80D020A7-2779-45A2-B947-F47CF3E4F244}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedViews", "SharedViews\SharedViews.csproj", "{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{80D020A7-2779-45A2-B947-F47CF3E4F244}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80D020A7-2779-45A2-B947-F47CF3E4F244}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80D020A7-2779-45A2-B947-F47CF3E4F244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
