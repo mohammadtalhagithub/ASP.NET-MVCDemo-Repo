@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>viewData</title>
+    <style>
+        .flexContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .myContainer {
+            background-color: cadetblue;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        ul {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial;">
+    <p>
+        ViewBag & ViewData are DataDictionary objects used
+        to transfer data from Controller to View.
+    </p>
+    <div class="flexContainer">
+        <div class="myContainer">
+
+            <h1>Via ViewData : @ViewData["MyCurrentTime"]</h1>
+
+            <h1>Via ViewBag : @ViewBag.MyCurrentTime</h1>
+
+
+            <ul>
+
+                @foreach (string item in (string[])ViewData["Array"]) // ViewData needs Type Casting in foreach(){}
+                {
+                    <li style="font-size: 1.3rem;">
+                        @item
+                    </li>
+                }
+
+            </ul>
+
+            <h2>ViewData List</h2>
+            <h3>ViewData Needs Type-casting in View cshtml.</h3>
+            <ul>
+
+                @foreach (string item in (List<string>)ViewData["List"]) // ViewData needs Type Casting in foreach(){}
+                {
+                    <li style="font-size: 1.3rem;">
+                        @item
+                    </li>
+                }
+
+            </ul>
+
+            <h2>ViewBag List</h2>
+            <h3>ViewBag does not need Type-casting in View cshtml.</h3>
+            <ul>
+                @foreach (string item in ViewBag.List) // ViewBag does not need Type Casting in foreach(){}
+                {
+                    <li style="font-size: 1.3rem;">
+                        @item
+                    </li>
+                }
+            </ul>
+            <h1>@ViewBag.simpleStr</h1>
+
+            <h2>Agents...</h2>
+
+            <ul>
+                @foreach (var item in ViewBag.AgentsList)
+                {
+                    <li>00{@item.ID}</li>
+                    <li>@item.Name</li>
+                    <li>@item.Designation</li>
+                    <br>
+                }
+            </ul>
+
+            <h2>
+                The type is :
+                @ViewBag.VarType
+            </h2>
+        </div>
+    </div>
+</body>
+</html>

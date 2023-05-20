@@ -1,0 +1,89 @@
+﻿
+@{
+                /**/
+
+                Layout = null;
+}
+
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+@* or can be added inside <head> tag *@
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+
+
+    <style>
+        li {
+            color: #006075;
+            list-style: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div>
+            <h1>Index</h1>
+            <h2><i>Html Helper Methods</i></h2>
+            <h3>Html.ActionLink("DisplayName", "ActionMethod", "ControllerName")</h3>
+            <h3>Html.TextBox("id And name", "Two", "value")</h3>
+
+            <ul>
+                <li>@Html.ActionLink("About Us", "About", "Home", new { style = "color: Red;", title = "Tooltip", @class = "html-class" })</li>
+                <li>@Html.ActionLink("Contact Us", "Contact")</li>
+                <li>@Html.ActionLink("Homepage", "Home")</li>
+            </ul>
+
+            @Html.TextBox("ID And Name", "Value", new { @class = "html-class form-control", @readonly = true })
+            <input id="ID" class="form-control" type="text" name="Name" value="Value" />
+
+            @{
+                Html.BeginForm("Index", "Home");
+            }
+
+            @Html.Label("Username") &nbsp; @Html.TextBox("Username", "", new { @class = "form-control" })
+            <br />
+            <br />
+            @Html.Label("Male") &nbsp; @Html.RadioButton("Gender", "Male")
+            @Html.Label("Female") &nbsp; @Html.RadioButton("Gender", "Female")
+            <br />
+            <br />
+            @Html.Label("Select Country") &nbsp; @Html.DropDownList("countryList", new SelectList(new[] { "India", "China", "USA" }), "Choose Country")
+
+            <select id="listID" name="cityList">
+                <option>Aligarh</option>
+                <option>Beijing</option>
+                <option>Atlanta</option>
+            </select>
+
+            <br />
+            <br />
+            @Html.Label("expression", "labelText", "htmlAttribute") &nbsp; @Html.TextArea("name", "value", 6, 30, null)
+            <br />
+            <br />
+            @Html.CheckBox("name", true, "htmlAttribute") &nbsp; @Html.Label("expression", "I accept the terms", "htmlAttribute")
+            <br />
+            <br />
+
+            @Html.Hidden("id")
+
+            <input type="submit" value="Accept" id="btnSubmit" /> @* No Html Helper Method for this.*@  
+            <br />
+            <br />
+            @Html.Label("Password")
+
+            @{
+                Html.EndForm();
+            }
+
+        </div>
+    </div>
+</body>
+</html>

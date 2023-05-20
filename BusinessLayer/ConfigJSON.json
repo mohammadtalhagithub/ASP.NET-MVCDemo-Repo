@@ -1,0 +1,8 @@
+{
+  "ConnectionString": "data source=TALHA\\SQLEXPRESS; database=HRDB; user id=ssms; password=password",
+  "Serialization": "Serialization is the conversion of an Object into Stream of Bytes.",
+  "DeSerialization": "DeSerialization is conversion of Stream of Bytes into Object",
+  "SelectAll": "select * from tblEmployee",
+  "SelectMike": "select * from tblEmployee where _name ='Mike'",
+  "Heading": "Write SQL query below: \n"
+}

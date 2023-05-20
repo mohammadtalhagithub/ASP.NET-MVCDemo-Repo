@@ -1,0 +1,128 @@
+﻿@model IEnumerable<BusinessLayer.Employee>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        .flexContainer {
+            display: flex;
+            justify-content: center;
+            background-color: #dcdcdc;
+            padding: 50px;
+        }
+
+        .flexContainer-child {
+            background-color: darkcyan;
+            border-radius: 20px;
+            padding: 10px;
+            font-family: Arial;
+        }
+
+        th {
+            font-size: 1.4rem;
+            color: whitesmoke;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        td {
+            font-size: 18px;
+        }
+
+        .btn-class {
+            background-color: #03adad;
+            border: 0px;
+            border-radius: 10px;
+            width: 150px;
+            padding: 12px;
+            font-size: 18px;
+        }
+
+            .btn-class:hover {
+                background-color: #b6ff00
+            }
+
+        .mylink {
+            text-align: center;
+            background-color: #bebebe;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <div class="flexContainer">
+        <div class="flexContainer-child">
+            <table class="table" border="0">
+                <tr>
+                    <th>
+                        @*Employee_ID*@
+                        @Html.DisplayNameFor(model => model.ID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.City)
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr style="text-align:center">
+                        <td style="font-weight: bold">
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        <td>
+                            <button class="btn-class">
+                                @Html.DisplayFor(modelItem => item.City)
+                            </button>
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.DateOfBirth)
+
+                            </td>*@
+                        <td>
+                            <button class="btn-class" style="width: 80px;">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                            </button>
+                            <button class="btn-class" style="width: 80px;">
+                                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                            </button>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+    </div>
+    <h3 class="flexContainer-child mylink">@ViewBag.URL</h3>
+
+
+</body>
+</html>

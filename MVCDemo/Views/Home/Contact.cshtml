@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+
+<div>
+    <h1>Contact</h1>
+    <h3>Via ViewData : @ViewData["Var1"]</h3>
+    <h3>Via ViewBag : @ViewBag.Var2</h3>
+    <h3>Via ViewData : @TempData["Var3"]</h3>
+    <h3>Via ViewData : @Session["Var4"]</h3>
+</div>
+<ul>
+    <li>@Html.ActionLink("About Us", "About")</li>
+    <li>@Html.ActionLink("Contact Us", "Contact")</li>
+    <li>@Html.ActionLink("Homepage", "Home")</li>
+</ul>
