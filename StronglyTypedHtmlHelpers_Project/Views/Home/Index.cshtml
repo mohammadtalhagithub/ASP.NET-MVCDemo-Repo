@@ -1,0 +1,62 @@
+﻿@model StronglyTypedHtmlHelpers_Project.Models.SignUp
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+@* By Declaring Html.BeginForm() inside using() , we don't need to write Html.EndForm() explicitly.
+    At the end of the using scope, Html.EndForm() is applied automatically.*@
+
+@using (Html.BeginForm())
+{
+    <table>
+
+        @Html.HiddenFor(model => model.UserID) @* UserID is kept hidden from Rendering using "Html.HiddenFor()" *@
+
+        <tr>
+            <td> @Html.LabelFor(myModel => myModel.UserName) </td> @* myModel => myModel.UserName is a Lambda expression. *@
+            <td> @Html.TextBoxFor(myModel => myModel.UserName, new { @class = "form-control" }) </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(myModel => myModel.UserPassword) </td>
+            <td> @Html.PasswordFor(myModel => myModel.UserPassword, new { @class = "form-control" }) </td> @* Html Helper for Password Textbox *@
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(myModel => myModel.UserGender) </td>
+            <td> @Html.DropDownListFor(myModel => myModel.UserGender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" }) </td> @* Html Helper for Password Textbox *@
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(myModel => myModel.UserEmail) </td>
+            <td> @Html.EditorFor(myModel => myModel.UserEmail, new { @class = "form-control" }) </td> @* Use Html.EditorFor() - Textbox which takes values of a particular data-type.*@
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(myModel => myModel.UserComment) </td>
+            <td> @Html.TextAreaFor(myModel => myModel.UserComment, new { @class = "form-control" }) </td>
+        </tr>
+    </table>
+    <div>
+        <input class="btn btn-primary" type="submit" value="Submit" />
+    </div>
+    @*<button type="button" class="btn btn-primary">Primary</button>*@
+}
+
+
+
+@*<div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">@Html.LabelFor(myModel => myModel.UserPassword)</label>
+        </div>
+        <div class="col-auto">
+            <input type="password" id="inputPassword6" class="form-control" aria-labelledby="passwordHelpInline">
+        </div>
+        <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+                Must be 8-20 characters long.
+            </span>
+        </div>
+    </div>*@
+
