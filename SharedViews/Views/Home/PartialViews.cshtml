@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "PartialViews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    h1, h2, h3 {
+        font-weight: 600;
+    }
+
+    h4 {
+    }
+
+    .code-block {
+        color: #397200;
+        font-family: Consolas;
+    }
+
+        .code-block h4 {
+            font-weight: 600;
+            font-size: 2.2rem;
+        }
+
+    section {
+        display: inline;
+        color: #ff0000;
+    }
+</style>
+
+<div class="container">
+    <h1>Partial Views</h1>
+    <h2>Static Partial Views</h2>
+
+    <h3>For Static Partial Views, we use : </h3>
+    <ul class="code-block">
+        <li><h4>@@Html.Partial(<section>"_PartialView"</section>)</h4></li>
+        <li>
+            <h4>@@{</h4>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Html.RenderPartial(<section>"_PartialView"</section>);</h4>
+            <h4>}</h4>
+        </li>
+    </ul>
+
+    <h2>Dynamic Partial Views</h2>
+
+    <h3>For Dynamic Partial Views, we use : </h3>
+    <ul class="code-block">
+        <li><h4>@@Html.Action("")</h4></li>
+        <li><h4>@@Html.RenderAction("")</h4></li>
+    </ul>
+
+    <h2>Html.Partial with MvcHtmlString</h2>
+
+    @{
+        var a = Html.Partial("_StudentsList"); // use this to store html content to a string by MvcHtmlString class
+        var b = new MvcHtmlString("<h3>Here is Students List</h3>" + a.ToString());
+    }
+
+    @*@b*@
+
+    @a
+    @b
+
+    <br />
+    <h3>Use Html.Partial to inject the _PartialView inside another view and also storing it inside another variable and also appending something extra in it by MvcHtmlString.</h3>
+    <h3>Use Html.RenderPartial to only inject the _PartialView inside another view but cannot be used to store it in a variable.</h3>
+
+    @{
+        Html.RenderPartial("_StudentsList");
+    }
+
+    @{
+        Html.RenderPartial("_StudentsList");
+    }
+</div>

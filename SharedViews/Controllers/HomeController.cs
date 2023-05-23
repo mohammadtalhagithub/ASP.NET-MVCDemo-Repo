@@ -29,17 +29,24 @@ namespace SharedViews.Controllers
             return View();
         }
 
+        public ActionResult Admin()
+        {
+
+            return View();
+        }
+
         /// <summary>
         /// See : <see cref="EducationModel"/> class
         /// </summary>
         /// <returns></returns>
         public ActionResult Education()
         {
-            
+
             ViewBag.EducationList = EdListFunc();
 
-            
 
+            // For strongly typed view, the return View() must contain some parameter inside to return, 
+            // such as an Object or a Collection of Objects.
             return View(EdListFunc());
         }
 
@@ -92,5 +99,11 @@ namespace SharedViews.Controllers
 
             return EduList;
         }
+
+        public ActionResult PartialViews()
+        {
+            return View();
+        }   
+
     }
 }

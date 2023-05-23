@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedViews", "SharedViews\SharedViews.csproj", "{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronglyTypedHtmlHelpers_Project", "StronglyTypedHtmlHelpers_Project\StronglyTypedHtmlHelpers_Project.csproj", "{017C8B0D-F5B8-4731-B8DA-B66D7D10842D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18F801EB-5792-44A1-B3CD-0430704222DA}"
+	ProjectSection(SolutionItems) = preProject
+		MVCDemo\README.md = MVCDemo\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA2C912C-34EB-42D9-AF3D-82FF1E5393EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{017C8B0D-F5B8-4731-B8DA-B66D7D10842D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{017C8B0D-F5B8-4731-B8DA-B66D7D10842D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{017C8B0D-F5B8-4731-B8DA-B66D7D10842D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{017C8B0D-F5B8-4731-B8DA-B66D7D10842D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,38 @@
+﻿@model List<SharedViews.Models.Product>
+@*since a list of objects needs to be displayed,
+    so declare model as List<ModelClass>*@
+
+@{
+    ViewBag.Title = "Products - Strongly-Typed Partial Views";
+}
+
+<style>
+    h2 {
+        font-weight: 600;
+    }
+</style>
+
+<div class="text-center">
+    <h2>Our Products</h2>
+
+    @{
+        foreach (var item in Model)
+        {
+
+            Html.RenderPartial("_ProductsPartialView", item);
+
+        }
+    }
+</div>
+
+<h3>Html.RenderPartial is faster than Html.Partial but can only be 
+    used to Render the Partial view, and cannot be stored in a variable.</h3>
+
+@*OR*@
+
+@*@foreach (var item in Model)
+    {
+
+        Html.RenderPartial("_ProductsPartialView", item);
+
+    }*@

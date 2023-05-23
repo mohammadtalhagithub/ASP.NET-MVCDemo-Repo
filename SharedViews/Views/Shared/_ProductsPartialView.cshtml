@@ -1,0 +1,42 @@
+﻿@model SharedViews.Models.Product
+@*since One object is passed at a time, so no need to
+    declare the model as List<ModelClassName>*@
+
+<style>
+    table {
+        background-color: #ffffff;
+        margin: 20px;
+    }
+
+    .product-details {
+        color: darkslategray;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+</style>
+
+<div class="container">
+    <table border="2" width="550" align="center">
+        <tr>
+            <td>
+                <img src="@Url.Content(Model.Picture)" width="150" height="150" alt="Alternate Text" />
+            </td>
+            <td>
+                <table class="product-details">
+                    <tr>
+                        <td>Product ID : </td>
+                        <td>@Model.ID</td>
+                    </tr>
+                    <tr>
+                        <td>Product Name : </td>
+                        <td>@Model.Name</td>
+                    </tr>
+                    <tr>
+                        <td>Product Price : </td>
+                        <td>@Model.Price</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>

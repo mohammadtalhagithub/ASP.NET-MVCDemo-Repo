@@ -13,17 +13,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@*<style contenteditable="true" style="display:block; font-weight:600; font-size: 2rem;">*@
 <style>
+    
     h2 {
         color: #009272;
     }
+
+    .code-block {
+        color: #000080;
+    }
 </style>
 <div class="container">
+
+    <h3 style="color: #ff6a00">_PartialView Method 1 : </h3>
+
+    <div title="Method 1 to inject a Partial View inside another view." class="code-block">
+        <h3>@@Html.Partial("_PartialView")</h3>
+    </div>
+
+    @Html.Partial("_Skills") @* OR *@
+
+    <br />
+    <br />
+    <h3 style="color: #ff6a00">_PartialView Method 2 : </h3>
+
+    <div title="Method 2 to inject a Partial View inside another view." class="code-block">
+        <h3>@@{</h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Html.RenderPartial("_PartialView");</h3>
+        <h3>}</h3>
+    </div>
+
+    @{
+        Html.RenderPartial("_Skills");
+    }
+
+    <br />
+
     <h1 style="font-weight: 600">Education</h1>
 
-    @foreach (var item in ViewBag.EducationList)
+    <h1 style="font-weight: 600">Dynamivally Typed View (using ViewBag) with Collection of Objects</h1>
+
+    @foreach (var item in ViewBag.EducationList) // NOT Strongly-Typed
     {
         <br />
+        <hr style="border: 1px solid #e1e1e1" />
+
         <h2>@item.Course &nbsp; (@item.CourseFull)</h2>
         <h3>@item.Branch</h3>
         <h3>@item.College</h3>
@@ -38,11 +74,17 @@
 
     <hr style="border: 1px solid #808080" />
     <br />
-    <h1 style="font-weight: 600">Strongly Typed with Collection of Objects</h1>
+    <h1 style="font-weight: 600">Strongly Typed View (using Model) with Collection of Objects</h1>
 
-    @foreach (var item in Model)
+
+    @*For strongly typed view, the return View() must contain some parameter inside to return,
+            such as an Object or a Collection of Objects like a List<>, etc.
+        @*For strongly-typed view with complex list/collection of objects "Model" is used as collection.*@
+    @foreach (var item in Model) // Model is used for strongly-typed view
     {
         <br />
+        <hr style="border: 1px solid #e1e1e1" />
+
         <h2>@item.Course &nbsp; (@item.CourseFull)</h2>
         <h3>@item.Branch</h3>
         <h3>@item.College</h3>

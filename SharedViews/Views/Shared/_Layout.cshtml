@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Portfolio, MVC</title>
     @Styles.Render("~/Content/css")
+
+    @Styles.Render("~/Content/CustomCSS.css")
+    @* OR *@
+    <link href="~/Content/CustomCSS.css" rel="stylesheet" />
+
+
     @Scripts.Render("~/bundles/modernizr")
+
+
+
+    <style>
+        footer {
+            background-color: #3C354D;
+            margin: 0px;
+            color: #cbcbcb;
+            font-size: 2rem;
+            text-align: center;
+            padding: 10px 0px 10px 0px;
+        }
+    </style>
 </head>
 <body>
     @* Navbar Starts *@
@@ -25,6 +44,8 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Education", "Education", "Home")</li>
+                    <li>@Html.ActionLink("Partial Views", "PartialViews", "Home")</li>
+                    <li>@Html.ActionLink("Products", "Index", "StronglyTypedPartialView")</li>
                 </ul>
             </div>
         </div>
@@ -37,7 +58,7 @@
         @RenderBody() 
         <hr />
     </div>
-    <footer style="margin: 0px; background-color: #373737; color: #cbcbcb; font-size: 2rem; text-align: center; padding: 10px 0px 10px 0px">
+    <footer style="">
         <p>&copy; @DateTime.Now.Year - Mohammad Talha (Developed using ASP.NET MVC).</p>
     </footer>
 
