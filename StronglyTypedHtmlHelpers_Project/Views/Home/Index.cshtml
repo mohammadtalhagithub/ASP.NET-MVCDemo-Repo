@@ -20,22 +20,34 @@
         <tr>
             <td> @Html.LabelFor(myModel => myModel.UserName) </td> @* myModel => myModel.UserName is a Lambda expression. *@
             <td> @Html.TextBoxFor(myModel => myModel.UserName, new { @class = "form-control" }) </td>
+            <td> <strong>@@Html.TextBoxFor</strong>(myModel => myModel.UserName, new { @@class = "form-control" })</td>
         </tr>
         <tr>
             <td> @Html.LabelFor(myModel => myModel.UserPassword) </td>
             <td> @Html.PasswordFor(myModel => myModel.UserPassword, new { @class = "form-control" }) </td> @* Html Helper for Password Textbox *@
+            <td> <strong>@@Html.PasswordFor</strong>(myModel => myModel.UserPassword, new { @@class = "form-control" }) </td>
         </tr>
         <tr>
             <td> @Html.LabelFor(myModel => myModel.UserGender) </td>
             <td> @Html.DropDownListFor(myModel => myModel.UserGender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @class = "form-control" }) </td> @* Html Helper for Password Textbox *@
+            <td> <strong>@@Html.DropDownListFor</strong>(myModel => myModel.UserGender, new SelectList(new[] { "Male", "Female" }), "Select Gender", new { @@class = "form-control" }) </td>
         </tr>
         <tr>
             <td> @Html.LabelFor(myModel => myModel.UserEmail) </td>
-            <td> @Html.EditorFor(myModel => myModel.UserEmail, new { @class = "form-control" }) </td> @* Use Html.EditorFor() - Textbox which takes values of a particular data-type.*@
+            <td> @Html.TextBoxFor(myModel => myModel.UserEmail, new { @class = "form-control" }) </td>
+            <td> <strong>@@Html.TextBoxFor</strong>(myModel => myModel.UserEmail, new { @@class = "form-control" }) </td>
+            @*<td> @Html.EditorFor(myModel => myModel.UserEmail, new { @class = "form-control" }) </td>*@
+            @* Use Html.EditorFor() - Textbox which takes values of a particular data-type, but cannot apply Bootstrap class*@
         </tr>
         <tr>
             <td> @Html.LabelFor(myModel => myModel.UserComment) </td>
             <td> @Html.TextAreaFor(myModel => myModel.UserComment, new { @class = "form-control" }) </td>
+            <td> <strong>@@Html.TextAreaFor</strong>(myModel => myModel.UserComment, new { @@class = "form-control" }) </td>
+        </tr>
+        <tr>
+            <td> @Html.DisplayNameFor(myModel => myModel.UserName) </td>
+            <td> @@Html.DisplayNameFor(myModel => myModel.UserName) </td>
+            <td> <strong>@@Html.DisplayNameFor</strong>(myModel => myModel.UserName) </td>
         </tr>
     </table>
     <div>

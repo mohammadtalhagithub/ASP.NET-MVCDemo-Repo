@@ -10,7 +10,7 @@ namespace StronglyTypedHtmlHelpers_Project.Controllers
     {
         // GET: Home
         public ActionResult Index()
-        {
+         {
             return View();
         }
     }

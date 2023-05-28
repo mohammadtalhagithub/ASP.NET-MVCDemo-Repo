@@ -1,0 +1,43 @@
+﻿@model StronglyTypedHtmlHelpers_Project.Models.Calculation
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home1 - Index</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(myModel => myModel.Num1) &nbsp; @Html.TextBoxFor(myModel => myModel.Num1, "", new { @class = "form-control" }) &nbsp; <b style="color: red;">@ViewBag.Num1Error</b>
+        @*@Html.ValidationMessage("Num1", new { @class = "text-danger" })*@
+    </p>
+
+    <p>
+        @Html.LabelFor(myModel => myModel.Num2) &nbsp; @Html.TextBoxFor(myModel => myModel.Num2, "", new { @class = "form-control" }) &nbsp; <b style="color: red;">@ViewBag.Num2Error</b>
+        @*@Html.ValidationMessage("Num2", new { @class = "text-danger" })*@
+    </p>
+
+    <p>
+        @Html.LabelFor(myModel => myModel.Email) &nbsp; @Html.TextBoxFor(myModel => myModel.Email, "", new { @class = "form-control" }) &nbsp; <b style="color: red;">@ViewBag.EmailError</b>
+    </p>
+
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+    <button class="btn btn-dark" style="color: white;">@Html.ActionLink("Clear", "Index", "Home1")</button>
+
+    @Html.Raw(ViewBag.Message) // For rendering the javascript expression placed inside <script> tag in Controller.
+
+    <hr />
+
+    <p>Addition Result is : <strong>@ViewBag.Result</strong> </p>
+
+}
+<hr />
+<p>
+    @* Show all validation message summary at one place. *@
+    <div style="color: red;">
+        @Html.ValidationSummary()
+    </div>
+</p>
