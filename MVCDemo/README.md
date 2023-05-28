@@ -1,5 +1,5 @@
-## react-portfolio
-This is my portfolio app made on ReactJs.
+## ASP.NET MVC Demo
+This is ASP.NET MVC Demo App.
 
 ## Developer : Mohammad Talha
 
